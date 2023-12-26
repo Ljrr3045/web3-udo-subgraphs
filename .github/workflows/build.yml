@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup NodeJS 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Move to subdirectory
+        run: cd fund-manager
+
+      - name: Install yarn
+        run: npm install -g yarn
+
+      - name: Clean cache
+        run: yarn cache clean
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
