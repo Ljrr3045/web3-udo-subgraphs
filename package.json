@@ -3,5 +3,10 @@
   "description": "Subgraphs of UDOT project",
   "version": "1.0.0",
   "author": "Ljrr3045",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "install": "cd fund-manager && yarn install",
+    "build:subgraph": "cd fund-manager && yarn build",
+    "deploy:subgraph": "cd fund-manager && yarn deploy"
+  }
 }

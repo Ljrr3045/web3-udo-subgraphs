@@ -21,9 +21,6 @@ jobs:
         with:
           node-version: 16
 
-      - name: Move to subdirectory
-        run: cd fund-manager
-
       - name: Install yarn
         run: npm install -g yarn
 
@@ -34,4 +31,4 @@ jobs:
         run: yarn install
 
       - name: Build
-        run: yarn build
+        run: yarn build:subgraph
