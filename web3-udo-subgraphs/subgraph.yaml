@@ -6,9 +6,9 @@ dataSources:
     name: FundManager
     network: mumbai
     source:
-      address: "0x25dcD86B0948703b7Ced7BD531BE723e86daFCDF"
+      address: "0x63ce92B6F52ee484de3E860956efcddD7577Df3b"
       abi: FundManager
-      startBlock: 43998235
+      startBlock: 44515065
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -20,7 +20,7 @@ dataSources:
         - ChangeKeeperSystem
         - ChangeReceiverTax
         - ChangeSenderTax
-        - DistributeRewards
+        - DistributeReward
         - OwnershipTransferred
         - Paused
         - RemoveStudentWallet
@@ -47,8 +47,8 @@ dataSources:
           handler: handleChangeReceiverTax
         - event: ChangeSenderTax(uint256,uint256)
           handler: handleChangeSenderTax
-        - event: DistributeRewards(uint8,uint256,uint256)
-          handler: handleDistributeRewards
+        - event: DistributeReward(uint8,uint256,uint256)
+          handler: handleDistributeReward
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
         - event: Paused(address)

@@ -5,7 +5,7 @@ import {
   ChangeKeeperSystem as ChangeKeeperSystemEvent,
   ChangeReceiverTax as ChangeReceiverTaxEvent,
   ChangeSenderTax as ChangeSenderTaxEvent,
-  DistributeRewards as DistributeRewardsEvent,
+  DistributeReward as DistributeRewardEvent,
   OwnershipTransferred as OwnershipTransferredEvent,
   Paused as PausedEvent,
   RemoveStudentWallet as RemoveStudentWalletEvent,
@@ -24,7 +24,7 @@ import {
   ChangeKeeperSystem,
   ChangeReceiverTax,
   ChangeSenderTax,
-  DistributeRewards,
+  DistributeReward,
   OwnershipTransferred,
   Paused,
   RemoveStudentWallet,
@@ -120,8 +120,8 @@ export function handleChangeSenderTax(event: ChangeSenderTaxEvent): void {
   entity.save()
 }
 
-export function handleDistributeRewards(event: DistributeRewardsEvent): void {
-  let entity = new DistributeRewards(
+export function handleDistributeReward(event: DistributeRewardEvent): void {
+  let entity = new DistributeReward(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity._destination = event.params._destination

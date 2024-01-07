@@ -51,7 +51,7 @@ type ChangeSenderTax @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
-type DistributeRewards @entity(immutable: true) {
+type DistributeReward @entity(immutable: true) {
   id: Bytes!
   _destination: Int! # uint8
   _amountDistributed: BigInt! # uint256
