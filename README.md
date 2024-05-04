@@ -23,7 +23,7 @@ This project uses the following technologies:
 ## Links
 
 You can try the subgraph deployed in The Graph in the following link:
-* [UDOT Subgraph](https://api.studio.thegraph.com/query/25982/web3-udo-subgraphs/1.0.3)
+* [UDOT Subgraph](https://api.studio.thegraph.com/query/25982/web3-udo-subgraph/0.0.2)
 
 ## Getting started
 
