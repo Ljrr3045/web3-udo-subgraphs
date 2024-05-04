@@ -1,8 +1,8 @@
 {
   "matic": {
     "FundManager": {
-      "address": "0xaB39aB462358e5329BCF877e0d0b17F0E305290D",
-      "startBlock": 56572329
+      "address": "0x2969297cc328064D46e4D9FB6C632Daf4a927e59",
+      "startBlock": 56582682
     }
   }
 }

@@ -504,6 +504,16 @@
   },
   {
     "inputs": [],
+    "name": "checker",
+    "outputs": [
+      { "internalType": "bool", "name": "canExec", "type": "bool" },
+      { "internalType": "bytes", "name": "execPayload", "type": "bytes" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "decimals",
     "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }],
     "stateMutability": "view",

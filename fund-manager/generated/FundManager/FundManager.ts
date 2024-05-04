@@ -392,6 +392,31 @@ export class VotesValidation__Params {
   }
 }
 
+export class FundManager__checkerResult {
+  value0: boolean;
+  value1: Bytes;
+
+  constructor(value0: boolean, value1: Bytes) {
+    this.value0 = value0;
+    this.value1 = value1;
+  }
+
+  toMap(): TypedMap<string, ethereum.Value> {
+    let map = new TypedMap<string, ethereum.Value>();
+    map.set("value0", ethereum.Value.fromBoolean(this.value0));
+    map.set("value1", ethereum.Value.fromBytes(this.value1));
+    return map;
+  }
+
+  getCanExec(): boolean {
+    return this.value0;
+  }
+
+  getExecPayload(): Bytes {
+    return this.value1;
+  }
+}
+
 export class FundManager extends ethereum.SmartContract {
   static bind(address: Address): FundManager {
     return new FundManager("FundManager", address);
@@ -538,6 +563,26 @@ export class FundManager extends ethereum.SmartContract {
     }
     let value = result.value;
     return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  checker(): FundManager__checkerResult {
+    let result = super.call("checker", "checker():(bool,bytes)", []);
+
+    return new FundManager__checkerResult(
+      result[0].toBoolean(),
+      result[1].toBytes(),
+    );
+  }
+
+  try_checker(): ethereum.CallResult<FundManager__checkerResult> {
+    let result = super.tryCall("checker", "checker():(bool,bytes)", []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value = result.value;
+    return ethereum.CallResult.fromValue(
+      new FundManager__checkerResult(value[0].toBoolean(), value[1].toBytes()),
+    );
   }
 
   decimals(): i32 {
