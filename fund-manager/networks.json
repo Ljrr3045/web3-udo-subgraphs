@@ -1,8 +1,8 @@
 {
-  "mumbai": {
+  "matic": {
     "FundManager": {
-      "address": "0x63ce92B6F52ee484de3E860956efcddD7577Df3b",
-      "startBlock": 44515065
+      "address": "0xaB39aB462358e5329BCF877e0d0b17F0E305290D",
+      "startBlock": 56572329
     }
   }
 }
